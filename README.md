@@ -4,30 +4,35 @@
 
 These packages provide an implementation of the rigid body motion estimation of an RGB-D camera from consecutive images.
 
+这些包提供了来自连续图像的rgb摄像机刚体运动估计的实现。
+
+
  *  **dvo_core**
     
-    Core implementation of the motion estimation algorithm. 
+    运动估计算法的核心实现。 Core implementation of the motion estimation algorithm. 
     
  *  **dvo_ros**
     
-    Integration of *dvo_core* with ROS.
+    dvo_core与ROS的集成 Integration of *dvo_core* with ROS.
     
  *  **dvo_slam**
     
-    Pose graph SLAM system based on *dvo_core* and integration with ROS.
+    基于 dvo_core的姿态图SLAM系统与ROS集成 Pose graph SLAM system based on *dvo_core* and integration with ROS.
     
  *  **dvo_benchmark**
     
-    Integration of *dvo_slam* with TUM RGB-D benchmark, see http://vision.in.tum.de/data/datasets/rgbd-dataset.
+   集成 dvo_slam 和转向 rgb d 基准  Integration of *dvo_slam* with TUM RGB-D benchmark, see http://vision.in.tum.de/data/datasets/rgbd-dataset.
     
  *  **sophus**
     
-    ROS package wrapper for Hauke Strasdat's Sophus library, see https://github.com/strasdat/Sophus.
+    strasdat库 Hauke Sophus的ROS包包装器 ROS package wrapper for Hauke Strasdat's Sophus library, see https://github.com/strasdat/Sophus.
     
 
-## Installation
+## 安装 Installation
 
 Checkout the branch for your ROS version into a folder in your `ROS_PACKAGE_PATH` and build the packages with `rosmake`.
+
+在 ROS_PACKAGE_PATH 中将你的ROS版本的分支签入到中，并使用 rosmake 构建包。
 
  *  ROS Fuerte:
     
@@ -50,6 +55,17 @@ For visualization:
  *  Add a *PointCloud2* display and set its *Topic* to `/dvo_vis/cloud`
 
 The red camera shows the current camera position. The blue camera displays the initial camera position.
+
+    用法
+    从rgb图像流估算相机轨迹：
+
+    为了可视化：
+
+    启动 RVIZ
+    将目标帧设置为 /world
+    添加交互式标记显示并将它的更新主题 /dvo_vis/update
+    添加 PointCloud2 显示并将它的主题 /dvo_vis/cloud
+    红色摄影机显示当前相机位置。 蓝色摄影机显示初始相机位置。
 
 ## Publications
 
